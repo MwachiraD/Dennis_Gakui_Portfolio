@@ -1,5 +1,5 @@
 const portfolioData = {
-  name: "Dennis Wachirea Mwangi",
+  name: "Dennis Wachira Mwangi",
   roleTag: "Open To Work | Backend Developer (Python | Django)",
   headline:
     "Backend-focused developer passionate about building reliable, scalable systems and solving real-world problems through clean backend architecture.",
