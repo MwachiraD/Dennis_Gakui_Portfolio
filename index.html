@@ -14,7 +14,7 @@
     />
     <meta name="author" content="Dennis Wachira Mwangi" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://your-portfolio.vercel.app/" id="canonicalUrl" />
+    <link rel="canonical" href="https://dennis-gakui-portfolio.vercel.app/" id="canonicalUrl" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dennis Wachira Mwangi | Backend Developer Portfolio" />
@@ -22,8 +22,8 @@
       property="og:description"
       content="Backend-focused developer building reliable, scalable systems with Python and Django."
     />
-    <meta property="og:url" content="https://your-portfolio.vercel.app/" />
-    <meta property="og:image" content="./assets/profile-placeholder.svg" />
+    <meta property="og:url" content="https://dennis-gakui-portfolio.vercel.app/" />
+    <meta property="og:image" content="./assets/dennis.jpg" />
     <meta property="og:image:alt" content="Dennis Wachira Mwangi profile photo" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -32,7 +32,7 @@
       name="twitter:description"
       content="Backend-focused developer building reliable, scalable systems with Python and Django."
     />
-    <meta name="twitter:image" content="./assets/profile-placeholder.svg" />
+    <meta name="twitter:image" content="./assets/dennis.jpg" />
 
     <script type="application/ld+json" id="personSchema">
       {
@@ -40,8 +40,8 @@
         "@type": "Person",
         "name": "Dennis Wachira Mwangi",
         "jobTitle": "Backend Developer",
-        "url": "https://your-portfolio.vercel.app/",
-        "image": "./assets/profile-placeholder.svg",
+        "url": "https://dennis-gakui-portfolio.vercel.app/",
+        "image": "./assets/dennis.jpg",
         "sameAs": [
           "https://www.linkedin.com/in/dennis-wachira-dev25",
           "https://github.com/MwachiraD"
@@ -69,6 +69,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#credibility">Credibility</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -83,10 +84,11 @@
             <p id="roleTag" class="eyebrow"></p>
             <h1 id="fullName"></h1>
             <p id="headline" class="hero-text"></p>
+            <p id="locationText" class="location-text"></p>
             <p class="hero-animated">
-              I build backend systems that are
-              <span id="animatedWord" class="animated-word">reliable</span>.
+              Focused on <span id="animatedWord" class="animated-word">performance</span>.
             </p>
+            <ul id="heroMetrics" class="hero-metrics"></ul>
             <div class="hero-actions">
               <a id="resumeLink" class="btn btn-primary" target="_blank" rel="noreferrer">View Resume</a>
               <a href="#contact" class="btn btn-ghost">Contact Me</a>
@@ -96,7 +98,7 @@
             <img
               id="profilePhoto"
               class="hero-photo"
-              src="./assets/profile-placeholder.svg"
+              src="./assets/dennis.jpg"
               alt="Dennis Wachira Mwangi profile photo"
             />
           </figure>
@@ -119,6 +121,25 @@
           <span class="mono" id="projectCount"></span>
         </div>
         <div id="projectsGrid" class="cards-grid"></div>
+      </section>
+
+      <section id="credibility" class="section container reveal">
+        <h2>Credibility</h2>
+        <div class="credibility-card">
+          <p class="credibility-text">
+            Active GitHub project history with backend-focused repositories and ongoing contributions.
+          </p>
+          <img id="githubGraph" class="github-graph" src="" alt="GitHub contribution graph" loading="lazy" />
+          <a
+            id="githubProfileLink"
+            class="btn btn-ghost"
+            href="https://github.com/MwachiraD"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View GitHub Profile
+          </a>
+        </div>
       </section>
 
       <section id="experience" class="section container reveal">

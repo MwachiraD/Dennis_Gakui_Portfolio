@@ -132,6 +132,13 @@ h1 {
   margin: 1.2rem 0 0;
 }
 
+.location-text {
+  margin: 0.65rem 0 0;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86rem;
+}
+
 .hero-animated {
   margin: 0.9rem 0 0;
   color: var(--text);
@@ -177,6 +184,24 @@ h1 {
   gap: 0.8rem;
   flex-wrap: wrap;
   margin-top: 2rem;
+}
+
+.hero-metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+
+.hero-metrics li {
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  padding: 0.55rem 0.65rem;
+  font-size: 0.86rem;
+  color: var(--muted);
 }
 
 .btn {
@@ -271,6 +296,25 @@ h2 {
   margin-top: 0;
 }
 
+.project-highlights {
+  margin: 0.7rem 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.project-highlights li {
+  margin-bottom: 0.35rem;
+}
+
+.project-impact {
+  margin: 0.5rem 0 0.8rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.65rem;
+  background: rgba(14, 124, 102, 0.08);
+  border: 1px solid rgba(14, 124, 102, 0.2);
+  color: #2f4e47;
+}
+
 .card-links {
   display: flex;
   gap: 0.6rem;
@@ -298,6 +342,23 @@ h2 {
   font-size: 1.02rem;
 }
 
+.timeline-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.featured-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(14, 124, 102, 0.35);
+  background: rgba(14, 124, 102, 0.1);
+  color: var(--primary);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.74rem;
+  font-family: "IBM Plex Mono", monospace;
+}
+
 .timeline-meta {
   margin: 0.2rem 0 0;
   color: var(--muted);
@@ -319,6 +380,28 @@ h2 {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
+}
+
+.credibility-card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.credibility-text {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.github-graph {
+  display: block;
+  width: 100%;
+  max-width: 840px;
+  border-radius: 0.8rem;
+  border: 1px solid var(--line);
+  margin-bottom: 0.9rem;
 }
 
 .site-footer {

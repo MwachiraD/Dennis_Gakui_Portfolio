@@ -2,7 +2,8 @@ const portfolioData = {
   name: "Dennis Wachira Mwangi",
   roleTag: "Open To Work | Backend Developer (Python | Django)",
   headline:
-    "Backend-focused developer passionate about building reliable, scalable systems and solving real-world problems through clean backend architecture.",
+    "Backend Developer specializing in Python and Django, focused on performance, clean architecture, and scalable backend systems.",
+  location: "Nairobi, Kenya | Open to Remote",
   about:
     "I am a backend developer specializing in Python and Django, with strong interest in system performance, data integrity, and clean architecture. I enjoy understanding how applications work internally - not just making them run, but making them reliable and scalable. I have built projects including a scam-reporting platform and a high-performance TCP search server. Currently expanding my skills in backend engineering, system design, and AI-integrated applications.",
   resumeUrl:
@@ -10,10 +11,16 @@ const portfolioData = {
   email: "denochira78@gmail.com",
   linkedinUrl: "https://www.linkedin.com/in/dennis-wachira-dev25",
   githubUrl: "https://github.com/MwachiraD",
-  siteUrl: "",
+  siteUrl: "https://dennis-gakui-portfolio.vercel.app/",
   photoUrl: "./assets/dennis.jpg",
   photoAlt: "Dennis Wachira Mwangi profile photo",
-  animatedWords: ["reliable", "scalable", "secure", "maintainable", "efficient"],
+  animatedWords: ["performance", "reliability", "impact"],
+  heroMetrics: [
+    "3 backend projects showcased",
+    "~70% faster data collection via automation",
+    "Internship + freelance delivery experience",
+  ],
+  githubGraphUrl: "https://ghchart.rshah.org/0e7c66/MwachiraD",
   skills: [
     "Python",
     "Django",
@@ -44,24 +51,43 @@ const portfolioData = {
     {
       title: "Scam Sentry",
       description:
-        "Django scam reporting platform for collecting and organizing scam reports with focus on validation, backend logic, and maintainable architecture.",
+        "Scam reporting platform built with Django allowing users to submit, track, and analyze scam cases.",
       stack: "Python, Django, SQLite/PostgreSQL, Bootstrap",
+      impact:
+        "Focused on backend validation, structured data handling, and maintainable architecture for long-term scalability.",
+      highlights: [
+        "Implemented validation and moderation-oriented backend workflows to improve report quality.",
+        "Designed structured report states for better tracking, review, and future analytics.",
+      ],
       liveUrl: "",
       repoUrl: "https://github.com/MwachiraD/Scam-sentry",
     },
     {
       title: "Task Scheduler",
       description:
-        "Python-based task scheduling project focused on organizing tasks with clear backend logic and extendable structure.",
+        "Python task scheduling application designed to organize deadlines and recurring workflows with clean backend structure.",
       stack: "Python",
+      impact:
+        "Built with extendable scheduling logic to support additional task rules and integrations over time.",
+      highlights: [
+        "Separated scheduling logic from task models to keep the codebase easy to extend.",
+        "Prioritized maintainability and clear backend flow for future feature growth.",
+      ],
       liveUrl: "",
       repoUrl: "https://github.com/MwachiraD/Task-Scheduler",
     },
     {
       title: "High-Performance TCP Search Server",
       description:
-        "Persistent TCP exact-line matching server with optional caching, logging, benchmarking, concurrency handling, and SSL support.",
+        "Persistent TCP exact-line matching server built for fast query handling under concurrent client connections.",
       stack: "Python, Sockets, Threading/Async, SSL/TLS",
+      impact:
+        "Includes benchmarking, caching, logging, and optional SSL/TLS to evaluate and improve real-world backend reliability.",
+      highlights: [
+        "Implemented concurrency handling for simultaneous client connections.",
+        "Added benchmark tooling to compare cached vs non-cached query performance.",
+        "Integrated SSL/TLS support for secure transport in sensitive environments.",
+      ],
       liveUrl: "",
       repoUrl: "",
       repoNote: "Code available on request",
@@ -72,12 +98,13 @@ const portfolioData = {
       role: "Software Developer Intern",
       org: "Nairobi City Hall",
       period: "2024",
+      featured: true,
       summary:
         "Developed internal web tools using Django and Python to streamline administrative operations.",
       highlights: [
-        "Contributed backend code in Java and Kotlin and optimized MySQL database queries.",
-        "Participated in agile development sprints, code reviews, deployment processes, and API integrations.",
-        "Gained hands-on experience with database management and real-world software workflows.",
+        "Built Django-powered internal workflows for administrative teams.",
+        "Contributed backend code in Java and Kotlin and optimized MySQL query performance.",
+        "Participated in agile sprints, API integrations, code reviews, and deployment activities.",
       ],
     },
     {
@@ -134,6 +161,12 @@ function renderSkills(skills) {
   list.innerHTML = skills.map((skill) => `<li>${skill}</li>`).join("");
 }
 
+function renderHeroMetrics(metrics) {
+  const list = document.getElementById("heroMetrics");
+  if (!list) return;
+  list.innerHTML = metrics.map((metric) => `<li>${metric}</li>`).join("");
+}
+
 function renderProjects(projects) {
   const grid = document.getElementById("projectsGrid");
   if (!grid) return;
@@ -160,16 +193,31 @@ function renderProjects(projects) {
   }
 
   grid.innerHTML = projects
-    .map(
-      (project) => `
+    .map((project) => {
+      const highlights = Array.isArray(project.highlights) ? project.highlights : [];
+      const highlightsHtml = highlights.length
+        ? `
+          <ul class="project-highlights">
+            ${highlights.map((line) => `<li>${line}</li>`).join("")}
+          </ul>
+        `
+        : "";
+
+      const impactHtml = project.impact
+        ? `<p class="project-impact"><strong>Impact:</strong> ${project.impact}</p>`
+        : "";
+
+      return `
       <article class="card">
         <h3>${project.title}</h3>
         <p>${project.description}</p>
         <p class="mono">${project.stack}</p>
+        ${highlightsHtml}
+        ${impactHtml}
         ${buildProjectLinks(project)}
       </article>
     `
-    )
+    })
     .join("");
 }
 
@@ -188,9 +236,16 @@ function renderExperience(experience) {
         `
         : "";
 
+      const featuredHtml = item.featured
+        ? `<span class="featured-badge">Featured Internship</span>`
+        : "";
+
       return `
       <article class="timeline-item">
-        <h3>${item.role} - ${item.org}</h3>
+        <div class="timeline-head">
+          <h3>${item.role} - ${item.org}</h3>
+          ${featuredHtml}
+        </div>
         <p class="timeline-meta">${item.period}</p>
         <p>${item.summary}</p>
         ${highlightsHtml}
@@ -298,6 +353,7 @@ function init() {
   setText("fullName", portfolioData.name);
   setText("roleTag", portfolioData.roleTag);
   setText("headline", portfolioData.headline);
+  setText("locationText", portfolioData.location);
   setText("aboutText", portfolioData.about);
   setText("footerName", portfolioData.name);
   setText("projectCount", `${portfolioData.projects.length} selected projects`);
@@ -308,8 +364,11 @@ function init() {
   setLink("linkedinLink", portfolioData.linkedinUrl);
   setLink("githubLink", portfolioData.githubUrl);
   setImage("profilePhoto", portfolioData.photoUrl, portfolioData.photoAlt);
+  setImage("githubGraph", portfolioData.githubGraphUrl, `${portfolioData.name} GitHub contribution graph`);
+  setLink("githubProfileLink", portfolioData.githubUrl);
 
   updateSeo(portfolioData);
+  renderHeroMetrics(portfolioData.heroMetrics);
   renderSkills(portfolioData.skills);
   renderProjects(portfolioData.projects);
   renderExperience(portfolioData.experience);
