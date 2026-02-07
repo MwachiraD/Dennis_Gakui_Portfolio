@@ -11,7 +11,7 @@ const portfolioData = {
   linkedinUrl: "https://www.linkedin.com/in/dennis-wachira-dev25",
   githubUrl: "https://github.com/MwachiraD",
   siteUrl: "",
-  photoUrl: "./assets/PHOTOT (1).jpg",
+  photoUrl: "./assets/dennis.jpg",
   photoAlt: "Dennis Wachira Mwangi profile photo",
   animatedWords: ["reliable", "scalable", "secure", "maintainable", "efficient"],
   skills: [
