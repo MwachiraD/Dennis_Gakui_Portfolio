@@ -12,7 +12,7 @@ const portfolioData = {
   githubUrl: "https://github.com/MwachiraD",
   siteUrl: "",
   photoUrl: "./assets/PHOTOT (1).jpg",
-  photoAlt: "Dennis Wachirea Mwangi profile photo",
+  photoAlt: "Dennis Wachira Mwangi profile photo",
   animatedWords: ["reliable", "scalable", "secure", "maintainable", "efficient"],
   skills: [
     "Python",
